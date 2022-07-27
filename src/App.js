@@ -4,69 +4,40 @@ import styled from 'styled-components';
 import back from './img/back01.jpg';
 
 import Prograss from './Prograss';
+import Header from './Header';
+import MainButton from './MainButton';
+import Intro from './contents/Intro';
+import AboutMe from './contents/AboutMe';
+import AboutMe02 from './contents/AboutMe02';
+import Portfolio from './contents/Portfolio';
 
 function App() {
-  const time = useRef(null);
-  const BoxRef = useRef(null);
-
-  setInterval(()=>{
-    let today = new Date();
-    let hour = today.getHours(); // 시
-    let min = today.getMinutes();  // 분
-    let sec = today.getSeconds();  // 초
-    time.current.innerHTML = `${hour<10 ? `0${hour}`:hour}:${min<10 ? `0${min}`:min}:${sec<10 ? `0${sec}`:sec}`
-  },1000);
-
-const start = ()=>{
-  BoxRef.current.style.opacity = 0;
-}
-
-//스크롤값 구하기
-const useScroll = ()=>{
-
-  // useState를 통해 x변수와 y변수 생성
-  
-      const [state, setState] = useState({ x:0, y:0 });
-  
-  //     스크롤을 내리면 window.scrollY값을 y값에 대입
-      const onScroll = (e)=>{
-               setState({ y : window.scrollY });
-      }
-  
-      
-       useEffect(()=>{
-               
-              window.addEventListener("scroll", onScroll);
-           
-              return()=>window.removeEventListener('scroll',onScroll);
-       },[]);
-  
-      return state;
-  
-  }
-  const { y } = useScroll();
-  console.log(y);
+  const numRef = useRef(0);
+  const [count, setCount] = useState(numRef.current);
+  const scrollRef = useRef(null);
   // 코드
   return (
-    <Background back={back} className="App">
-      <Prograss/>
-      <MainContainer ref={BoxRef}>
-      <Time ref={time}></Time>
-      <MainText>
-        <div>Hello, world</div>
-        <div>최재근의 세계로 초대합니다</div>
-      </MainText>
-      <button  onClick={()=>{
-        start();
-      }}>들어가기</button>
-      </MainContainer>
-    </Background>
+    <Container back={back} className="App">
+      <Prograss count = {count}/>
+      <Header setCount = {setCount} numRef={numRef}/>
+      <MainButton setCount = {setCount} numRef={numRef}/>
+      <Contents numRef={numRef}>
+        <Intro setCount = {setCount} numRef={numRef} scrollRef = {scrollRef}/>
+        <AboutMe numRef={numRef}/>
+        <AboutMe02 numRef={numRef}/>
+        <Portfolio/>
+      </Contents>
+    </Container>
   );
 }
 
 export default App;
 
-const Background = styled.div`
+const Container = styled.div`
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:0;
   width:100%;
   height:100vh;
   background:center url(${props=>props.back});
@@ -74,30 +45,10 @@ const Background = styled.div`
   background-size:cover;
   overflow:hidden;
 `;
-const MainContainer = styled.div`
-text-align:center;
+const Contents = styled.div`
+width:100%;
 position:absolute;
-top:35%;
-left:50%;
-transform:translate(-50%);
-font-weight:bold;
-color:#fff;
-transition: 1s ease-in-out;
-  button{
-    margin-top:10px;
-    font-weight:bold;
-    padding:20px 30px;
-    background-color:#fff;
-    border:2px solid #fff;
-    border-radius:20px;
-  }
-`;
-const Time = styled.div`
-width:380px;
-font-size:100px;
-margin:0 auto;
-`;
-const MainText = styled.div`
-  font-size:50px;
-  text-align:center;
+top:-${props=>props.numRef.current}00vh;
+left:0;
+transition: .5s ease-in-out;
 `;

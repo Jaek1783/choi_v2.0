@@ -2,4 +2,19 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    /* background-color: rgba(90, 40, 190, 0.677); */
+}
+img{
+    width:100%;
+}
+
+/* button 왼쪽 오른쪽 absolute값 */
+.lt{
+    left:18%;
+}
+.rt{
+    right:18%;
+}
+.active{
+    transform: scale(1.2);
 }

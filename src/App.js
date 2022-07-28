@@ -10,6 +10,7 @@ import Intro from './contents/Intro';
 import AboutMe from './contents/AboutMe';
 import AboutMe02 from './contents/AboutMe02';
 import Portfolio from './contents/Portfolio';
+import Contect from './contents/Contect';
 
 function App() {
   const numRef = useRef(0);
@@ -26,6 +27,7 @@ function App() {
         <AboutMe numRef={numRef}/>
         <AboutMe02 numRef={numRef}/>
         <Portfolio/>
+        <Contect/>
       </Contents>
     </Container>
   );

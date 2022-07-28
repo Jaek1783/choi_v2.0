@@ -59,6 +59,7 @@ transition: 1s ease-in-out;
     background-color:#fff;
     border:2px solid #fff;
     border-radius:20px;
+    cursor:pointer;
   }
 `;
 const Time = styled.div`

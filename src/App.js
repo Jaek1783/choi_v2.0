@@ -10,7 +10,8 @@ import Intro from './contents/Intro';
 import AboutMe from './contents/AboutMe';
 import AboutMe02 from './contents/AboutMe02';
 import Portfolio from './contents/Portfolio';
-import Contect from './contents/Contect';
+import Contact from './contents/Contact';
+import Welcome from './contents/Welcome';
 
 function App() {
   const numRef = useRef(0);
@@ -19,15 +20,20 @@ function App() {
   // 코드
   return (
     <Container back={back} className="App">
+      {/* 프로그래스 바 */}
       <Prograss count = {count}/>
+      {/* 네비게이션 */}
       <Header setCount = {setCount} numRef={numRef}/>
+      {/* 스크롤 작동 버튼 */}
       <MainButton setCount = {setCount} numRef={numRef}/>
+      {/* 포트폴리오 컨텐츠 */}
       <Contents numRef={numRef}>
         <Intro setCount = {setCount} numRef={numRef} scrollRef = {scrollRef}/>
         <AboutMe numRef={numRef}/>
         <AboutMe02 numRef={numRef}/>
         <Portfolio/>
-        <Contect/>
+        <Contact/>
+        <Welcome/>
       </Contents>
     </Container>
   );

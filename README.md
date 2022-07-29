@@ -11,3 +11,6 @@
 * 모바일 사이즈, 태블릿 사이즈, PC이상 사이즈를 나누어 useMediaQuery를 이용하여 적응형 웹사이트로 만든 포트폴리오
 
 ## 사용스택
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/styled-components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
+<img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=Redux&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>

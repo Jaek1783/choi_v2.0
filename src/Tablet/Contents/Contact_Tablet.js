@@ -11,10 +11,10 @@ const Contect = ()=>{
                 <span>개발경력 : 국비지원 퍼블리싱 6개월, 독학 4개월, 개발강의수료증 3개, 최종 배포 프로젝트 3개  </span>
                 <span><a href="tel:010 - 8591 - 7542">전화번호 : 010 - 8591 - 7542</a></span>
                 <span>이메일 : jaek1783@gmail.com</span>
-                <span className="contact" onClick={()=>{
+                <span className="link" onClick={()=>{
                     window.open('https://blog.naver.com/jaek1783', '_blank');
                 }}>블로그 : https://blog.naver.com/jaek1783</span>
-                <span className="contact" onClick={()=>{
+                <span className="link" onClick={()=>{
                     window.open('https://github.com/Jaek1783', '_blank');
                 }}>깃허브 : https://github.com/Jaek1783</span>
             </div>
@@ -45,7 +45,17 @@ flex-direction:column;
                 text-decoration: none ;
             }
         }
-        cursor:pointer;
+        .link{
+            cursor:pointer;
+        }
     }
+    .me{
+        display:flex;
+        justify-content:flex-end;
+        padding-top:1rem;
+        text-align:right;
+        img{
+            width:50%;
+        }
 
 `;

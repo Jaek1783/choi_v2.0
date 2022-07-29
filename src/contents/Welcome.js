@@ -29,7 +29,7 @@ position:relative;
         background-size:cover;
         position:absolute;
         top:25%;
-        left:31.5%;
+        left:25%;
         animation: rotate 30s linear infinite;
 
 
@@ -38,12 +38,13 @@ position:relative;
 
 
 const MainText = styled.div`
+width:60%;
     background-color:rgba(90,40,190, 0.5);
     padding:1rem;
     font-size:50px;
     text-align:center;
     position:absolute;
-    top:40%;
+    top:30%;
     left:50%;
     transform:translate(-50%);
     display:flex;

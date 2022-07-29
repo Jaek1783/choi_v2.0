@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Me from './../img/AboutME/me.jpg'
+import Me from './../../img/AboutME/me.jpg'
 
 const AboutMe = (props)=>{
     return(
@@ -28,15 +28,15 @@ const Container = styled.div`
     transition: 1s ease-in-out;
 `;
 const Contents = styled.div`
-    background-color: rgba(90, 40, 190, 0.9);
-    height:30rem;
+background-color: rgba(90, 40, 190, 0.9);
+    margin:0 auto;
     padding:2rem;
     display:flex;
     justify-content:space-evenly;
     color:#fff;
     position:relative;
         div.me{
-            width:20rem;
+            width:40%;
         }
 `;
 const Text = styled.div`

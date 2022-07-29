@@ -38,7 +38,7 @@ const Container = styled.div`
     background:no-repeat center url(${props=>props.back});
     background-size:cover;
     color:#fff;
-    font-size:1.5rem;
+    font-size:1rem;
     font-weight:bold;
     padding:6.5rem 7% 0;
         div.text{

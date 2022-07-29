@@ -26,7 +26,7 @@ const Container = styled.div`
     z-index:999999;
     position:fixed;
     right:5%;
-    top:50%;
+    top:30%;
     display:flex;
     flex-direction:column;
     transition:.5s ease-in-out;
@@ -34,12 +34,12 @@ const Container = styled.div`
     margin:0 auto;
     opacity:${props=>props.numRef.current === 0 ? "0":"1"};
     img{
-        width:30px;
+        width:25px;
         margin:0 auto;
     }
 `;
 const Page = styled.div`
 
 color:#fff;
-font-size:30px;
+font-size:25px;
 `;

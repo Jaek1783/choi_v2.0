@@ -4,7 +4,7 @@ import nameCard from "./../img/Contact/NamePaper.png";
 const Contect = ()=>{
     return(
         <Container>
-            <div className="contect">
+            <div className="contact">
                 <span>이름 : 최재근</span>
                 <span>나이 : 29세</span>
                 <span>사는 곳 : 서울시 마포구</span>
@@ -34,7 +34,7 @@ padding:2rem;
 color:#fff;
 display:flex;
 flex-direction:column;
-    .contect{
+    .contact{
         display:flex;
         flex-direction:column;
         span{
@@ -45,7 +45,7 @@ flex-direction:column;
                 text-decoration: none ;
             }
         }
-        .contact{
+        .link{
             cursor:pointer;
         }
     }

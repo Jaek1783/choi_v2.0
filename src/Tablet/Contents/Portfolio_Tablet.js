@@ -1,7 +1,7 @@
 import React,{useRef, useState} from "react";
 import styled from "styled-components";
-import left from "./../img/icon/left.png";
-import right from "./../img/icon/right.png";
+import left from "./../../img/icon/left.png";
+import right from "./../../img/icon/right.png";
 import { useSelector } from "react-redux";
 const Portfolio = ()=>{
     const data = useSelector(state=>state.Portfolio.project);
@@ -65,7 +65,8 @@ const Portfolio = ()=>{
             </Contents>
             <Button className="rt" onClick={()=>{
                 rightButtonClick();
-            }}><img src={right} alt="오른쪽 화살표" /></Button>
+            }}><img src={right} alt="오른쪽 화살표"/>
+            </Button>
         </Container>
     )
 }; export default Portfolio;
@@ -76,15 +77,15 @@ height:100vh;
 position:relative;
 /* button 왼쪽 오른쪽 absolute값 */
 .lt{
-    left:10px;
+    left:30px;
 }
 .rt{
-    right:10px;
+    right:30px;
 }
 `;
 
 const Contents = styled.div`
-width:51rem;
+width:23rem;
 height:100vh;
 overflow:hidden;
 margin:0 auto;
@@ -119,7 +120,7 @@ const Slide = styled.div`
         }
 `;
 const Button = styled.div`
-width:50px;
+width:30px;
 position:absolute;
 top:50%;
 `;

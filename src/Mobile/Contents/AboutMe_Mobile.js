@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Me from './../img/AboutME/me.jpg'
+import Me from './../../img/AboutME/me.jpg'
 
 const AboutMe = (props)=>{
     return(
@@ -23,28 +23,31 @@ const AboutMe = (props)=>{
 
 const Container = styled.div`
     width:100%;
-    height:$30rem;
-    background-color: rgba(90, 40, 190, 0.9);
-    margin:15.5rem 0;
+    height:100vh;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
     transition: 1s ease-in-out;
 `;
 const Contents = styled.div`
-    width:50%;
+    width:100%;
+    height:20rem;
     margin:0 auto;
-    height:30rem;
-    padding:2rem;
+    padding:.5rem;
     display:flex;
     justify-content:space-evenly;
+    align-items:center;
+    background-color: rgba(90, 40, 190, 0.9);
     color:#fff;
     position:relative;
         div.me{
-            width:20rem;
+            width:8rem;
         }
 `;
 const Text = styled.div`
         display:flex;
         flex-direction: column;
-        font-size:20px;
+        font-size:.9rem;
         font-weight:bold;
-        line-height:3rem;
+        line-height:${props=>props.isPc ? "3rem":"2rem"};
 `;

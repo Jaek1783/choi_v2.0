@@ -8,13 +8,6 @@ img{
     width:100%;
 }
 
-/* button 왼쪽 오른쪽 absolute값 */
-.lt{
-    left:18%;
-}
-.rt{
-    right:18%;
-}
 .active{
     transform: scale(1.2);
     font-size: large;

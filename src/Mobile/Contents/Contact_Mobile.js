@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import nameCard from "./../img/Contact/NamePaper.png";
+import nameCard from "./../../img/Contact/NamePaper.png";
 const Contect = ()=>{
     return(
         <Container>
@@ -19,16 +19,16 @@ const Contect = ()=>{
                 }}>깃허브 : https://github.com/Jaek1783</span>
             </div>
             <div className="me">
-                <img src={nameCard} alt="나의 사진" />
+                <img src={nameCard} alt="나의 사진"/>
             </div>
         </Container>
     )
 }; export default Contect;
 
 const Container = styled.div`
-width:60vw;
-height:80vh;
-margin:12vh auto 0;
+width:95%;
+height:35rem;
+margin:7rem auto 0;
 background-color:rgba(90, 40, 190, 0.677);
 padding:2rem;
 color:#fff;
@@ -49,13 +49,5 @@ flex-direction:column;
             cursor:pointer;
         }
     }
-    .me{
-        display:flex;
-        justify-content:flex-end;
-        padding-top:1rem;
-        text-align:right;
-        img{
-            width:50%;
-        }
-    }
+
 `;

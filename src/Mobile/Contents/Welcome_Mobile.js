@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import back from "./../img/Prograss/earth.png"
+import back from "./../../img/Prograss/earth.png"
 const Welcome = ()=>{
     return(
         <Container  back={back}>
@@ -31,21 +31,22 @@ position:relative;
         top:25%;
         left:31.5%;
         animation: rotate 30s linear infinite;
-
-
     }
 `;
 
 
 const MainText = styled.div`
+    width:95%;
     background-color:rgba(90,40,190, 0.5);
     padding:1rem;
-    font-size:50px;
+    font-size:30px;
     text-align:center;
+
     position:absolute;
     top:40%;
     left:50%;
     transform:translate(-50%);
+
     display:flex;
     flex-direction:column;
         span{

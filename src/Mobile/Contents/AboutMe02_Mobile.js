@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import back from "./../img/back02.jpg";
+import back from "./../../img/back02.jpg";
 
 const AboutMe02 = ()=>{
     return(
@@ -38,11 +38,10 @@ const Container = styled.div`
     background:no-repeat center url(${props=>props.back});
     background-size:cover;
     color:#fff;
-    font-size:1.5rem;
+    font-size:.9rem;
     font-weight:bold;
-    padding:6.5rem 7% 0;
+    padding:6.5rem 1rem 0;
         div.text{
-            width:70%;
             height:80vh;
             margin:0 auto;
             padding:.5rem;

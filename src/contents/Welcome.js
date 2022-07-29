@@ -22,16 +22,19 @@ font-weight:bold;
 color:#fff;
 position:relative;
     div.back{
-        animation: rotate 30s linear infinite;
-        position:absolute;
-        top:25%;
-        left:30%;
-        transform:translate(-50%);
-        width:40%;
-        height:73vh;
+        width:700px;
+        height:700px;
         margin:0 auto;
         background:no-repeat center url(${props=>props.back});
         background-size:cover;
+
+        position:absolute;
+        top:25%;
+        left:31.5%;
+
+        animation: rotate 30s linear infinite;
+
+
     }
 `;
 

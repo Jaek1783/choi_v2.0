@@ -27,13 +27,14 @@ const AboutMe = (props)=>{
 
 const Container = styled.div`
     width:100%;
-    height:80vh;
-    margin:20vh 0 0;
+    height:50vh;
+    background-color: rgba(90, 40, 190, 0.9);
+    margin:25vh 0;
     transition: 1s ease-in-out;
 `;
 const Contents = styled.div`
-    background-color: rgba(90, 40, 190, 0.9);
-    width:100vw;
+    width:50%;
+    margin:0 auto;
     height:${props=>props.isPc ? "30rem":"25rem"};
     padding:${props=>props.isPc ? "2rem":"2rem 1rem"};
     display:flex;

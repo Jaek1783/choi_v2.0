@@ -42,9 +42,9 @@ const Container = styled.div`
     background:no-repeat center url(${props=>props.back});
     background-size:cover;
     color:#fff;
-    font-size:${props=>props.isPc ? "1.2rem" : ".7rem"}
+    font-size:${props=>props.isPc ? "1.5rem" : ".7rem"};
     font-weight:bold;
-    padding:6rem 7% 0;
+    padding:6.5rem 7% 0;
         div.text{
             width:70%;
             height:80vh;

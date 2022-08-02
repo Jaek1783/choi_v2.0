@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 import back from './img/back01.jpg';
@@ -33,8 +33,31 @@ import AboutMe02_Mobile from './Mobile/Contents/AboutMe02_Mobile';
 import Portfolio_Mobile from './Mobile/Contents/Portfolio_Mobile';
 import Contact_Mobile from './Mobile/Contents/Contact_Mobile';
 import Welcome_Mobile from './Mobile/Contents/Welcome_Mobile';
+const useScroll = ()=>{
 
+  // useState를 통해 x변수와 y변수 생성
+  
+      const [state, setState] = useState({ x:0, y:0 });
+  
+  //     스크롤을 내리면 window.scrollY값을 y값에 대입
+      const onScroll = (e)=>{
+               setState({ y : window.scrollY });
+      }
+       useEffect(()=>{
+               
+              window.addEventListener("scroll", onScroll);
+           
+              return()=>window.removeEventListener('scroll',onScroll);
+       },[]);
+  
+      return state;
+  
+  }
 function App() {
+  const { y } = useScroll();
+  console.log(y);
+  const scrollRef = useRef(null);
+  
   const isTablet = useMediaQuery({
     query : "(min-width:426px) and (max-width:768px)"
   });
@@ -43,10 +66,11 @@ function App() {
   });
   const numRef = useRef(0);
   const [count, setCount] = useState(numRef.current);
-  const scrollRef = useRef(null);
+
   // 코드
   return (
-    <Container back={back} className="App">
+    <div className="App">
+      <Background back ={back}></Background>
       {/* 프로그래스 바 */}
       <Prograss count = {count}/>
       {/* 네비게이션 */}
@@ -54,34 +78,44 @@ function App() {
       {/* 스크롤 작동 버튼 */}
       {isMobile ?   <MainButton_Mobile setCount = {setCount} numRef={numRef}/> : isTablet ? <MainButton_Mobile setCount = {setCount} numRef={numRef}/> : <MainButton setCount = {setCount} numRef={numRef}/>}
       {/* 포트폴리오 컨텐츠 */}
-      <Contents numRef={numRef}>
-        <Intro setCount = {setCount} numRef={numRef} scrollRef = {scrollRef}/>
-        {isMobile ?  <AboutMe_Mobile numRef={numRef}/> :  isTablet ? <AboutMe_Tablet numRef={numRef}/> : <AboutMe numRef={numRef}/>}
-        {isMobile ?  <AboutMe02_Mobile numRef={numRef}/> : isTablet ? <AboutMe02_Mobile numRef={numRef}/> : <AboutMe02 numRef={numRef}/> }
-        {isMobile ?  <Portfolio_Mobile/> : isTablet ? <Portfolio_Tablet/> :  <Portfolio/>}
-        {isMobile ?  <Contact_Mobile/> : isTablet ? <Contact_Tablet/> : <Contact/>}
-        {isMobile ?  <Welcome_Mobile/> : isTablet ? <Welcome_Mobile/> : <Welcome/>}
-        
-      </Contents>
-    </Container>
+      <Container numRef={numRef}>
+        <Contents numRef={numRef} ref = {scrollRef}>
+          <Intro setCount = {setCount} numRef={numRef}/>
+          {isMobile ?  <AboutMe_Mobile numRef={numRef}/> :  isTablet ? <AboutMe_Tablet numRef={numRef}/> : <AboutMe numRef={numRef}/>}
+          {isMobile ?  <AboutMe02_Mobile numRef={numRef}/> : isTablet ? <AboutMe02_Mobile numRef={numRef}/> : <AboutMe02 numRef={numRef}/> }
+          {isMobile ?  <Portfolio_Mobile/> : isTablet ? <Portfolio_Tablet/> :  <Portfolio/>}
+          {isMobile ?  <Contact_Mobile/> : isTablet ? <Contact_Tablet/> : <Contact/>}
+          {isMobile ?  <Welcome_Mobile/> : isTablet ? <Welcome_Mobile/> : <Welcome/>}
+        </Contents>
+      </Container>
+    </div>
   );
 }
 
 export default App;
 
 const Container = styled.div`
+width:100%;
+height:${props=>props.numRef.current === 0 ? "800px":""};
+position:${props=>props.numRef.current === 0 ? "fixed":""};
+top:0;
+left:0;
+overflow:${props=>props.numRef.current === 0 ? "hidden":""};
+`;
+
+const Background = styled.div`
   position:fixed;
   top:0;
   left:0;
   z-index:0;
   width:100%;
   height:100vh;
-  background:center url(${props=>props.back});
-  background-repeat:no-repeat;
+  background:repeat-x center url(${props=>props.back});
   background-size:cover;
-  overflow:hidden;
+
 `;
 const Contents = styled.div`
+overflow:hidden;
 width:100%;
 position:absolute;
 top:-${props=>props.numRef.current}00vh;

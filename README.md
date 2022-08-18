@@ -10,6 +10,8 @@
 * 자기소개, 개발직군 지원동기, 개인 포트폴리오, 아이컨택 주소를 알아볼 수 있는 자기소개 포트폴리오
 * 모바일 사이즈, 태블릿 사이즈, PC이상 사이즈를 나누어 useMediaQuery를 이용하여 적응형 웹사이트로 만든 포트폴리오
 
+## 포트폴리오 주소
+* https://jaek1783.github.io/choi_v2.0
 ## 사용스택
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/styled-components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
 <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=Redux&logoColor=white"/>

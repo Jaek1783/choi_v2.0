@@ -55,7 +55,9 @@ const useScroll = ()=>{
   }
 function App() {
   const { y } = useScroll();
-  console.log(y);
+  let scrollY = Math.floor(y/3457*100);
+
+  console.log(scrollY);
   const scrollRef = useRef(null);
   
   const isTablet = useMediaQuery({
@@ -72,7 +74,7 @@ function App() {
     <div className="App">
       <Background back ={back}></Background>
       {/* 프로그래스 바 */}
-      <Prograss count = {count}/>
+      <Prograss count = {count} scrollY={scrollY}/>
       {/* 네비게이션 */}
       {isMobile ?  <Header_Mobile setCount = {setCount} numRef={numRef}/> :  <Header setCount = {setCount} numRef={numRef}/>}
       {/* 스크롤 작동 버튼 */}
@@ -96,11 +98,10 @@ export default App;
 
 const Container = styled.div`
 width:100%;
-height:${props=>props.numRef.current === 0 ? "800px":""};
-position:${props=>props.numRef.current === 0 ? "fixed":""};
+height:${props=>props.numRef.current === 0 ? "800":""}px;
+position:fixed;
 top:0;
 left:0;
-overflow:${props=>props.numRef.current === 0 ? "hidden":""};
 `;
 
 const Background = styled.div`

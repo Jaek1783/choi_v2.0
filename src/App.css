@@ -19,7 +19,8 @@ img{
     cursor: pointer;
 }
 .active>button:hover{
-    background-color:#9b1d1d;
+    background-color:#3d1d9b;
+    color:#fff;
 }
 .noneActive>button{
     background-color:rgb(90,40,190);

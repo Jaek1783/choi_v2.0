@@ -11,12 +11,12 @@ const Portfolio = ()=>{
     const projectRef = useRef(null);
 
     const leftButtonClick = ()=>{
-        if(num < 4){
+        if(num < 5){
             slideRef.current.style.transition = "all .3s ease-in-out";
             setNum(numRef.current += 1);
             slideRef.current.style.marginLeft = (numRef.current * 34) + "rem";
         }
-        if(num === 2){
+        if(num === 3){
             setTimeout(()=>{
                 slideRef.current.style.transition = "none";
                 setNum(numRef.current = -2);
@@ -25,7 +25,7 @@ const Portfolio = ()=>{
         }
     }
     const rightButtonClick = ()=>{
-        if(num > -3){
+        if(num > -4){
             slideRef.current.style.transition = "all .3s ease-in-out";
             setNum(numRef.current -= 1);
             slideRef.current.style.marginLeft = (numRef.current * 34) + "rem";
@@ -33,7 +33,7 @@ const Portfolio = ()=>{
         if(num === -2){
             setTimeout(()=>{
                 slideRef.current.style.transition = "none";
-                setNum(numRef.current = 2);
+                setNum(numRef.current = 3);
                 slideRef.current.style.marginLeft = (numRef.current * 34) + "rem";
             },500);
         }
@@ -84,8 +84,9 @@ position:relative;
 `;
 
 const Contents = styled.div`
-width:51rem;
+width:40rem;
 height:100vh;
+padding-right:17rem;
 overflow:hidden;
 margin:0 auto;
 display:flex;
@@ -94,11 +95,7 @@ align-items: center;
 align-content :center;
 `;
 const SlideContainer = styled.div`
-margin-left:0;
 display:flex;
-justify-content:center;
-align-items: center;
-align-content :center;
 `;
 const Slide = styled.div`
     padding:.5rem;

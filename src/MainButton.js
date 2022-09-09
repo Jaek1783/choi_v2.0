@@ -3,19 +3,19 @@ import styled from "styled-components";
 import up from "./img/icon/up.png";
 import down from "./img/icon/down.png";
 
-const MainButton = (props)=>{
+const MainButton = ({numRef, setCount})=>{
     const page = 5;
     return(
-        <Container numRef = {props.numRef}>
-            <Page>{props.numRef.current+" / "+page}</Page>
+        <Container numRef = {numRef}>
+            <Page>{numRef.current+" / "+page}</Page>
             <div onClick={()=>{
-                if(props.numRef.current > 0){
-                    props.setCount(props.numRef.current -= 1);
+                if(numRef.current > 0){
+                    setCount(numRef.current -= 1);
                 }
             }}><img src={up} alt="up 이미지" /></div>
             <div onClick={()=>{
-                if(props.numRef.current < page){
-                    props.setCount(props.numRef.current += 1);
+                if(numRef.current < page){
+                    setCount(numRef.current += 1);
                 }
             }}><img src={down} alt="down 이미지" /></div>
         </Container>

@@ -1,10 +1,13 @@
-import React,{useRef, useState} from "react";
+import React,{useRef, useState, useContext} from "react";
+import { AppContext } from "../../Context/Context";
+
 import styled from "styled-components";
 import left from "./../../img/icon/left.png";
 import right from "./../../img/icon/right.png";
-import { useSelector } from "react-redux";
+
 const Portfolio = ()=>{
-    const data = useSelector(state=>state.Portfolio.project);
+
+    const data = useContext(AppContext);
     const [num, setNum] = useState(0);
     const numRef = useRef(0);
     const slideRef= useRef(null);
